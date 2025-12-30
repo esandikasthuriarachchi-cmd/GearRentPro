@@ -1,9 +1,8 @@
 
--- =====================================================
--- GearRent Pro - FINAL SQL SCRIPT
--- Database: gearrentdb
--- Includes: Schema + FULL Sample Data (as per coursework)
--- =====================================================
+
+
+ Database: gearrentdb
+
 
 DROP DATABASE IF EXISTS gearrentdb;
 CREATE DATABASE gearrentdb CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
