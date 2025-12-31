@@ -1,6 +1,4 @@
 
-
-
  Database: gearrentdb
 
 
@@ -162,3 +160,22 @@ CREATE TABLE reservations (
 INSERT INTO reservations VALUES
 (1,2,4,1,'2025-12-20','2025-12-24','Active'),
 (2,9,5,2,'2025-12-10','2025-12-12','Active');
+
+
+
+
+
+USE gearrentdb;
+ALTER TABLE rentals
+ADD COLUMN actual_return_date DATE NULL,
+ADD COLUMN damage_charge DECIMAL(10,2) NOT NULL DEFAULT 0,
+ADD COLUMN late_fee DECIMAL(10,2) NOT NULL DEFAULT 0,
+ADD COLUMN discount DECIMAL(10,2) NOT NULL DEFAULT 0,
+ADD COLUMN total_charge DECIMAL(10,2) NOT NULL DEFAULT 0,
+ADD COLUMN amount_paid DECIMAL(10,2) NOT NULL DEFAULT 0,
+ADD COLUMN payment_status ENUM('Paid','Unpaid') NOT NULL DEFAULT 'Unpaid';
+
+
+ALTER TABLE reservations 
+ADD COLUMN payment_status ENUM('Paid', 'Unpaid') NOT NULL DEFAULT 'Unpaid';
+
